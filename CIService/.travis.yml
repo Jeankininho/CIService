@@ -1,0 +1,4 @@
+﻿language: csharp
+solution: CIService
+script:
+    msbuild /p:Configuration=Release CIService.sln
