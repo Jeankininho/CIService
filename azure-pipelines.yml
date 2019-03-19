@@ -19,7 +19,6 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    nugetConfigPath: 'CIService\\NuGet.config'
     restoreSolution: '$(solution)'
 
 - task: VSBuild@1
