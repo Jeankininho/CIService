@@ -1,6 +1,4 @@
 using log4net;
-using SkySoftwareLibs.Service;
-using SkySoftwareLibs.Service.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,14 +16,15 @@ namespace CIService
         public static WinService WinService;
         public static Process CurrentProcess;
 
+
         static void Main(string[] args)
         {
-            if (ServiceUtil.CheckIfsRunning(out CurrentProcess))
-                Environment.Exit(-1);
+            //if (ServiceUtil.CheckIfsRunning(out CurrentProcess))
+            //    Environment.Exit(-1);
 
             try
             {
-                ServiceUtil.Initialize(getpublicIp: false);
+                //ServiceUtil.Initialize(getpublicIp: false);
 
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
                 AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
@@ -45,12 +44,6 @@ namespace CIService
                     ServiceBase.Run(WinService);
                 }
                 Environment.Exit(-1);
-            }
-            catch (DependencyMissingException dep)
-            {
-                Log.Fatal($"[{dep.Dependency}] {dep.Message}");
-                Console.Write("Press any key");
-                Console.ReadLine();
             }
             catch (Exception ex)
             {
@@ -86,8 +79,7 @@ namespace CIService
 
         private static void CurrentDomain_FirstChanceException(object sender, System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs e)
         {
-            if (!ServiceUtil.IgnoreException(e.Exception))
-                Log.Fatal($"[FirstChanceException] ", e.Exception);
+            Log.Fatal($"[FirstChanceException] ", e.Exception);
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)

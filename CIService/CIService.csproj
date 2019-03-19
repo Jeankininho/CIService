@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticObjects.cs" />
     <Compile Include="WinService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -87,8 +88,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SkySoftwareLibs.Service">
-      <Version>1.1.2</Version>
+    <PackageReference Include="log4net">
+      <Version>2.0.8</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
