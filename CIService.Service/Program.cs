@@ -14,7 +14,6 @@ namespace CIService
     {
         public static ILog Log = LogManager.GetLogger(typeof(Program));
         public static WinService WinService;
-        public static Process CurrentProcess;
 
 
         static void Main(string[] args)

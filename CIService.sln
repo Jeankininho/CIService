@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIService", "CIService\CIService.csproj", "{911CC54C-7B2F-44C5-AE02-D510BBC6162E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CA339A92-20AB-4E5B-AE77-2FEE2ECB6116}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1CDC2D29-09DC-4857-9520-158480DC0A03}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet.Config = NuGet.Config
+		deploy.bat = deploy.bat
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIService.Service", "CIService.Service\CIService.Service.csproj", "{911CC54C-7B2F-44C5-AE02-D510BBC6162E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
