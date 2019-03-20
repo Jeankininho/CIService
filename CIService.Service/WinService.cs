@@ -11,6 +11,7 @@ namespace CIService
     public class WinService : ServiceBase
     {
         public ILog Log;
+        
         public WinService()
         {
             Log = LogManager.GetLogger(typeof(WinService));
@@ -19,6 +20,7 @@ namespace CIService
         protected override void OnStart(string[] args)
         {
             Log.Debug("Starting service");
+
         }
 
 
