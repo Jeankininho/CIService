@@ -18,6 +18,7 @@ namespace CIService
 
         static void Main(string[] args)
         {
+
             //if (ServiceUtil.CheckIfsRunning(out CurrentProcess))
             //    Environment.Exit(-1);
 
