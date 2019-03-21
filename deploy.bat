@@ -17,4 +17,6 @@ del /S /F /Q %DESTI_DIR%\CIService.Service\*.pdb
 del /S /F /Q %DESTI_DIR%\CIService.Service\*vshost.exe*
 
 
-move Publish $(build.artifactstagingdirectory)
+::move Publish $(build.artifactstagingdirectory)
+
+dir Publish
