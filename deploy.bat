@@ -1,6 +1,9 @@
 SET SOURCE_BIN=bin\Release
 SET DESTI_DIR=Publish
 
+
+dir
+
 RMDIR  /S /Q %DESTI_DIR%
 
 SET sourceDir=%DESTI_DIR%
