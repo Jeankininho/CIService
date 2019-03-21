@@ -28,7 +28,6 @@ namespace CIService
                 //ServiceUtil.Initialize(getpublicIp: false);
 
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-                AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
                 WinService = new WinService();
 
                 if (Environment.UserInteractive || (args?.Length > 0 && args.Contains("-Console")))
@@ -76,11 +75,6 @@ namespace CIService
                         break;
                 }
             }
-        }
-
-        private static void CurrentDomain_FirstChanceException(object sender, System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs e)
-        {
-            Log.Fatal($"[FirstChanceException] ", e.Exception);
         }
 
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
