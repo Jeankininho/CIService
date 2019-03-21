@@ -37,3 +37,9 @@ steps:
   displayName: 'Run script publisher'
   inputs:
     filename: $(build.sourcesdirectory)\deploy.bat
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: 'Publish'
+  condition: true
