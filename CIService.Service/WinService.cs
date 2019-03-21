@@ -30,7 +30,7 @@ namespace CIService
 
         public void Loop()
         {
-            Log.Debug("Service is running");
+            Log.Debug("Service is running AHAHAHAHAHAHA");
         }
 
 
