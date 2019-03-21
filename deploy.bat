@@ -9,7 +9,7 @@ RMDIR  /S /Q %DESTI_DIR%
 SET sourceDir=%DESTI_DIR%
 MKDIR %sourceDir%
 
-xcopy CIService.Service\%SOURCE_BIN%\* %DESTI_DIR%\CIService.Service\.
+xcopy CIService.Service\%SOURCE_BIN%\* %DESTI_DIR%\CIService.Service\.  /e /i /y /s
 
 
 del /S /F /Q %DESTI_DIR%\CIService.Service\*.xml
