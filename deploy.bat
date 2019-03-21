@@ -15,3 +15,6 @@ xcopy CIService.Service\%SOURCE_BIN%\* %DESTI_DIR%\CIService.Service\.  /e /i /y
 del /S /F /Q %DESTI_DIR%\CIService.Service\*.xml
 del /S /F /Q %DESTI_DIR%\CIService.Service\*.pdb
 del /S /F /Q %DESTI_DIR%\CIService.Service\*vshost.exe*
+
+
+move Publish $(build.artifactstagingdirectory)
