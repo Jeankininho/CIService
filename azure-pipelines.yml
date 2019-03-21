@@ -53,3 +53,8 @@ steps:
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
   condition: true
+
+- task: BatchScript@1
+  displayName: 'Run script publisher'
+  inputs:
+    filename: $(build.sourcesdirectory)\deploy.bat
