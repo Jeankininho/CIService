@@ -25,6 +25,7 @@ namespace CIService
         protected override void OnStart(string[] args)
         {
             Log.Debug("Starting service");
+            MaintTimer.Start();
         }
 
         public void Loop()
@@ -36,6 +37,7 @@ namespace CIService
         protected override void OnStop()
         {
             Log.Debug("Stopping service");
+            MaintTimer.Stop();
         }
 
         internal void StartConsole()

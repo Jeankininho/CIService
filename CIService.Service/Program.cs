@@ -18,6 +18,7 @@ namespace CIService
 
         static void Main(string[] args)
         {
+            log4net.Config.XmlConfigurator.Configure();
 
             //if (ServiceUtil.CheckIfsRunning(out CurrentProcess))
             //    Environment.Exit(-1);
