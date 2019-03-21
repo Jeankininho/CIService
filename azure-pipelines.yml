@@ -32,19 +32,17 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: PublishSymbols@1
-  displayName: 'Publish symbols path:'
+- task: BatchScript@1
+  displayName: 'Run script publisher'
   inputs:
-    SearchPattern: '**\bin\**\*.pdb'
-  continueOnError: true
+    filename: $(build.sourcesdirectory)\deploy.bat
 
 - task: CopyFiles@1
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
   inputs:
     SourceFolder: '$(build.sourcesdirectory)'
-    Contents: |
-      **\bin\$(BuildConfiguration)\**
-      src\*.testsettings
+    Contents:
+      Publish\**
     TargetFolder: '$(build.artifactstagingdirectory)'
   condition: true
 
@@ -53,8 +51,3 @@ steps:
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
   condition: true
-
-- task: BatchScript@1
-  displayName: 'Run script publisher'
-  inputs:
-    filename: $(build.sourcesdirectory)\deploy.bat
